@@ -1,8 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 
 const navLinkStyle = {
   display: 'block',
@@ -25,6 +26,16 @@ const middleLinkStyle = {
 };
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
   return (
     <>
       {/* Top Purple Bar */}
@@ -36,29 +47,29 @@ export default function Navbar() {
       }}>
         <div className="mx-auto px-4" style={{ maxWidth: '1160px' }}>
           <div className="flex items-center justify-between h-10">
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 sm:gap-6">
               <div className="flex items-center gap-2">
-                <span>✉</span>
-                <span>rwua.haripur@rwua.org</span>
+                <span className="hidden sm:inline">✉</span>
+                <span className="text-xs sm:text-sm">rwua.haripur@rwua.org</span>
               </div>
               <div className="hidden sm:block">☎ 046-411109</div>
               <div className="hidden md:block">Sun-Fri 10am – 5pm</div>
             </div>
             <a
               href="tel:046-411109"
-              className="bg-red-600 hover:bg-red-700 px-4 py-1.5 rounded-full flex items-center gap-2 transition-colors"
+              className="bg-red-600 hover:bg-red-700 px-2 sm:px-4 py-1 sm:py-1.5 rounded-full flex items-center gap-1 sm:gap-2 transition-colors text-xs sm:text-sm"
             >
-              <Phone className="w-4 h-4" />
-              046-411109
+              <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">046-411109</span>
             </a>
           </div>
         </div>
       </div>
 
       {/* Yellow Middle Bar - Nepali Links */}
-      <div className="border-b border-yellow-400" style={{ backgroundColor: '#fff487' }}>
+      <div className="border-b border-yellow-400 overflow-x-auto" style={{ backgroundColor: '#fff487' }}>
         <div className="mx-auto px-4" style={{ maxWidth: '1160px' }}>
-          <div className="flex justify-start items-center h-10 gap-8 text-sm font-medium">
+          <div className="flex justify-start items-center h-10 gap-4 sm:gap-8 text-sm font-medium whitespace-nowrap">
             <a href="#" className="middle-nav-link font-medium transition-colors relative" style={middleLinkStyle}>
               सफलताको कथा
             </a>
@@ -119,7 +130,7 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* Navigation Menu */}
+            {/* Navigation Menu - Desktop */}
             <nav className="hidden lg:flex items-center gap-8">
               <Link
                 href="/"
@@ -141,9 +152,7 @@ export default function Navbar() {
                   style={{ ...navLinkStyle, display: 'flex', alignItems: 'center' }}
                 >
                   <span>News & Press</span>
-                  <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ transform: 'rotate(180deg)' }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <ChevronDown className="w-3 h-3 ml-1 transform rotate-180" />
                 </button>
                 {/* Dropdown - adjust links as needed */}
                 <div className="absolute left-0 mt-2 w-48 bg-purple-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
@@ -185,15 +194,101 @@ export default function Navbar() {
               </Link>
             </nav>
 
-            {/* Mobile Menu Button (optional - you can add mobile menu logic) */}
-            <button className="lg:hidden">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-white p-2"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-purple-800 border-t border-purple-700">
+          <div className="px-4 py-2 space-y-1">
+            <Link
+              href="/"
+              className="block px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors text-right"
+              onClick={closeMobileMenu}
+            >
+              Home
+            </Link>
+            <Link
+              href="/gallery"
+              className="block px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors text-right"
+              onClick={closeMobileMenu}
+            >
+              Gallery
+            </Link>
+
+            {/* News & Press Dropdown for Mobile */}
+            <div>
+              <button
+                className="w-full flex items-center justify-end px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors"
+                onClick={() => setIsNewsDropdownOpen(!isNewsDropdownOpen)}
+              >
+                <span>News & Press</span>
+                <ChevronDown className={`w-4 h-4 ml-2 transform transition-transform ${isNewsDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isNewsDropdownOpen && (
+                <div className="mr-4 mt-1 space-y-1">
+                  <Link
+                    href="/news"
+                    className="block px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors text-right"
+                    onClick={closeMobileMenu}
+                  >
+                    News
+                  </Link>
+                  <Link
+                    href="/press"
+                    className="block px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors text-right"
+                    onClick={closeMobileMenu}
+                  >
+                    Press Releases
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/success-story"
+              className="block px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors text-right"
+              onClick={closeMobileMenu}
+            >
+              Success Story
+            </Link>
+            <Link
+              href="/vacancy"
+              className="block px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors text-right"
+              onClick={closeMobileMenu}
+            >
+              All Vacancy
+            </Link>
+            <Link
+              href="/contact"
+              className="block px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors text-right"
+              onClick={closeMobileMenu}
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="/downloads"
+              className="block px-3 py-2 text-white hover:bg-purple-700 rounded-md transition-colors text-right"
+              onClick={closeMobileMenu}
+            >
+              Downloads
+            </Link>
+          </div>
+        </div>
+      )}
     </>
   );
 }

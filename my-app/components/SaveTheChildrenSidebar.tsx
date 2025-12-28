@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { Search } from 'lucide-react';
 
 export default function SaveTheChildrenSidebar() {
   return (
@@ -22,9 +23,7 @@ export default function SaveTheChildrenSidebar() {
               type="submit"
               className="ml-[-40px] w-10 h-10 bg-purple-800 rounded-full flex items-center justify-center hover:bg-purple-900 transition-colors"
             >
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              <Search className="w-5 h-5 text-white" />
             </button>
           </form>
         </div>

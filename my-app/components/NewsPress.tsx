@@ -2,20 +2,19 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { Home, User, Calendar, Folder, Tag } from 'lucide-react';
 import SaveTheChildrenSidebar from './SaveTheChildrenSidebar';
 
 export default function NewsPressPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Breadcrumb Section */}
-      <section className="py-4 px-0" style={{ background: '#ecf6fe', paddingTop: '15px' }}>
+      <section className="py-4 px-0 bg-[#ecf6fe] pt-[15px]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-end">
-            <nav className="flex items-center text-sm text-gray-600 font-poppins">
+            <nav className="flex items-center text-sm text-gray-600 font-sans">
               <Link href="/" className="hover:text-purple-800 flex items-center">
-                <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
-                </svg>
+                <Home className="w-4 h-4 mr-1" />
                 मुख्य पृष्ठ
               </Link>
               <span className="mx-2">/</span>
@@ -34,7 +33,7 @@ export default function NewsPressPage() {
               <div className="space-y-8">
 
                 {/* Card 1 */}
-                <article className="p-5 mb-16 overflow-hidden bg-white shadow-lg">
+                <article className="p-5 mb-16 overflow-hidden bg-white shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
                   <div className="mb-5">
                     <Image
                       src="https://rwua.com.np/wp-content/uploads/2025/12/blimket-780x470-1.png"
@@ -46,33 +45,25 @@ export default function NewsPressPage() {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl leading-10 font-bold p-0 m-0 mb-5 font-poppins">
-                      <Link href="#" className="transition-all duration-300 no-underline" style={{ color: '#422673' }}>
+                    <h2 className="text-[32px] leading-[38px] font-bold p-0 m-0 mb-5 font-sans">
+                      <Link href="#" className="transition-all duration-300 no-underline text-[#422673]">
                         हरिपुरका बिपन्न घरपरिवारलाई न्यानो कम्बल वितरण कार्यक्रम ४४२ घरधुरीलाई कम्बल वितरण
                       </Link>
                     </h2>
 
                     {/* Meta Info */}
-                    <div className="flex items-center gap-4 mb-4 text-sm font-poppins" style={{ color: '#2b99f8' }}>
+                    <div className="flex items-center gap-4 mb-[15px] text-sm font-sans text-[#2b99f8]">
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                          <circle cx="12" cy="7" r="4" />
-                        </svg>
+                        <User className="w-4 h-4" />
                         <span className="uppercase">RWUA NEPAL</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                          <line x1="16" y1="2" x2="16" y2="6" />
-                          <line x1="8" y1="2" x2="8" y2="6" />
-                          <line x1="3" y1="10" x2="21" y2="10" />
-                        </svg>
+                        <Calendar className="w-4 h-4" />
                         <span>December 27, 2025</span>
                       </div>
                     </div>
 
-                    <p className="text-base text-gray-600 leading-7 mb-5 font-poppins">
+                    <p className="text-base text-[#444444] leading-7 mb-5 font-sans">
                       सर्लाहीको हरिपुर नगरपालिकामा सिमान्तकृत दलित तथा मुसहर समुदायलाई लक्षित गरी न्यानो कम्बल वितरण कार्यक्रम सम्पन्न भएको छ। शुक्रबार ग्रामीण नारी उत्थान संघ, हरिपुर–२ सर्लाहीको आयोजना तथा सेभ द चिल्ड्रेनको आर्थिक सहयोग एवम् हरिपुर नगरपालिकासँगको सहकार्य र समन्वयमा हरिपुर नगरपालिका वडा नं. १, २, ४, ५, ७, ८ र ९ का सिमान्तकृत दलित तथा मुसहर समुदायका ४४२ घरधुरीलाई जम्मा ५७६ थान न्यानो कम्बल वितरण गरिएको हो।
 
                       कार्यक्रम ग्रामीण नारी उत्थान संघकी अध्यक्ष गोमा देवी न्यौपानेको अध्यक्षता तथा हरिपुर नगरपालिकाकी उप–प्रमुख निलम राय यादवको प्रमुख आतिथ्यतामा सम्पन्न भएको थियो। कार्यक्रममा संस्थाका उपाध्यक्ष, सचिव, सदस्यहरू, कर्मचारीहरू तथा इलाका प्रहरी कार्यालय हरिपुरका प्रतिनिधिहरूको उपस्थिति रहेको थियो। न्यानो कम्बल वितरण कार्यक्रम विशेष गरी हरिपुर नगरपालिकाभित्र रहेका मुसहर तथा दलित समुदायका बस्तीहरूलाई केन्द्रमा राखी सञ्चालन गरिएको हो। जाडोयाममा अत्यन्तै आवश्यक न्यानो राहत उपलब्ध गराउने उद्देश्यले कार्यक्रम आयोजना गरिएको आयोजक संस्थाले जनाएको छ।
@@ -86,24 +77,20 @@ export default function NewsPressPage() {
                     <hr className="border-t border-gray-300 mb-4" />
 
                     {/* Footer with folder and tag icons */}
-                    <div className="flex items-center gap-2 text-sm text-gray-500 font-poppins">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 font-sans">
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z" />
-                        </svg>
-                        <Link href="#" className="no-underline" style={{ color: '#422673' }}>Community Support</Link>
+                        <Folder className="w-4 h-4" />
+                        <Link href="#" className="no-underline text-[#422673]">Community Support</Link>
                       </div>
                       <div className="flex items-center gap-1 ml-3">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M5.5 7A1.5 1.5 0 004 5.5 1.5 1.5 0 005.5 4 1.5 1.5 0 007 5.5 1.5 1.5 0 005.5 7zm15.91 4.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7A1.5 1.5 0 007 5.5 1.5 1.5 0 005.5 4 1.5 1.5 0 004 5.5 1.5 1.5 0 005.5 7z" />
-                        </svg>
+                        <Tag className="w-4 h-4" />
                       </div>
                     </div>
                   </div>
                 </article>
 
                 {/* Card 2 */}
-                <article className="p-5 mb-16 overflow-hidden bg-white shadow-lg">
+                <article className="p-5 mb-16 overflow-hidden bg-white shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
                   <div className="mb-5">
                     <Image
                       src="https://rwua.com.np/wp-content/uploads/2025/02/shared-image.jpeg"
@@ -115,33 +102,25 @@ export default function NewsPressPage() {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl leading-10 font-bold p-0 m-0 mb-5 font-poppins">
-                      <Link href="#" className="transition-all duration-300 no-underline" style={{ color: '#422673' }}>
+                    <h2 className="text-[32px] leading-[38px] font-bold p-0 m-0 mb-5 font-sans">
+                      <Link href="#" className="transition-all duration-300 no-underline text-[#422673]">
                         बिहानको भेलामा पुर्न बालक्लब गठन बालबालिकाको अधिकार बिषयमा छलफल
                       </Link>
                     </h2>
 
                     {/* Meta Info */}
-                    <div className="flex items-center gap-4 mb-4 text-sm font-poppins" style={{ color: '#2b99f8' }}>
+                    <div className="flex items-center gap-4 mb-[15px] text-sm font-sans text-[#2b99f8]">
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                          <circle cx="12" cy="7" r="4" />
-                        </svg>
+                        <User className="w-4 h-4" />
                         <span className="uppercase">RWUA NEPAL</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                          <line x1="16" y1="2" x2="16" y2="6" />
-                          <line x1="8" y1="2" x2="8" y2="6" />
-                          <line x1="3" y1="10" x2="21" y2="10" />
-                        </svg>
+                        <Calendar className="w-4 h-4" />
                         <span>December 15, 2025</span>
                       </div>
                     </div>
 
-                    <p className="text-base text-gray-600 leading-7 mb-5 font-poppins">
+                    <p className="text-base text-[#444444] leading-7 mb-5 font-sans">
                       सर्लाहीमा विद्यालयको पहुँचमा पुग्न नसकेका २० जना अपाङ्ग बालबालिकालाई घरमै शिक्षा प्रदान हुने भएको छ। सर्लाहीको हरिपुर, ईश्वरपुुर, गोडैता र बलरा नगरपालिकामा बहुअपांगता भएका बालबालिकाहरुलाई शिक्षाको अधिकार सुनिश्चित गर्नका लागि साक्षरता सहजकर्तालाई घरमै पठाएर शिक्षा प्रदान गरिने छ । सेभ द चिल्ड्रेनको आर्थिक सहयोग र ग्रामीण नारी उत्थान संघ हरिपुर तथा राष्ट्रिय रोजगार प्रर्वद्धन केन्द्र मलंगवामा संयुक्तरूपमा संचालित समुन्नति परियोजना अन्तर्गत बहुअपांगता भई विधालयको पहुँचमा जान नसक्ने बालबालिकाहरुलाई घरमै शिक्षा प्रदान गरिने छ ।
 
                       ग्रामीण नारी उत्थान संघका कार्यक्षेत्र पर्ने हरिपुर नगरपालिकाका ३ जना र ईश्वरपुर नगरपालिकाका ७ जना र राष्ट्रिय रोजगार प्रर्वद्धन केन्द्रका कार्यक्षेत्र पर्ने बलरा र गोडैता नगरपालिका गरी १० जना अपाङ्ग बालबालिकालाई घरमै शिक्षा प्रदान गरिने ग्रामीण नारी उत्थान संघका उपाध्यक्ष विष्णुप्रसाद चालिसेले बताउनु भयो ।
@@ -157,24 +136,20 @@ export default function NewsPressPage() {
                     <hr className="border-t border-gray-300 mb-4" />
 
                     {/* Footer with folder and tag icons */}
-                    <div className="flex items-center gap-2 text-sm text-gray-500 font-poppins">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 font-sans">
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z" />
-                        </svg>
-                        <Link href="#" className="no-underline" style={{ color: '#422673' }}>Child Rights</Link>
+                        <Folder className="w-4 h-4" />
+                        <Link href="#" className="no-underline text-[#422673]">Child Rights</Link>
                       </div>
                       <div className="flex items-center gap-1 ml-3">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M5.5 7A1.5 1.5 0 004 5.5 1.5 1.5 0 005.5 4 1.5 1.5 0 007 5.5 1.5 1.5 0 005.5 7zm15.91 4.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7A1.5 1.5 0 007 5.5 1.5 1.5 0 005.5 4 1.5 1.5 0 004 5.5 1.5 1.5 0 005.5 7z" />
-                        </svg>
+                        <Tag className="w-4 h-4" />
                       </div>
                     </div>
                   </div>
                 </article>
 
                 {/* Card 3 */}
-                <article className="p-5 mb-16 overflow-hidden bg-white shadow-lg">
+                <article className="p-5 mb-16 overflow-hidden bg-white shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
                   <div className="mb-5">
                     <Image
                       src="https://rwua.com.np/wp-content/uploads/2020/01/13.jpg"
@@ -186,33 +161,25 @@ export default function NewsPressPage() {
                   </div>
 
                   <div>
-                    <h2 className="text-3xl leading-10 font-bold p-0 m-0 mb-5 font-poppins">
-                      <Link href="#" className="transition-all duration-300 no-underline" style={{ color: '#422673' }}>
+                    <h2 className="text-[32px] leading-[38px] font-bold p-0 m-0 mb-5 font-sans">
+                      <Link href="#" className="transition-all duration-300 no-underline text-[#422673]">
                         न्यानो कम्मल बितरण
                       </Link>
                     </h2>
 
                     {/* Meta Info */}
-                    <div className="flex items-center gap-4 mb-4 text-sm font-poppins" style={{ color: '#2b99f8' }}>
+                    <div className="flex items-center gap-4 mb-[15px] text-sm font-sans text-[#2b99f8]">
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                          <circle cx="12" cy="7" r="4" />
-                        </svg>
+                        <User className="w-4 h-4" />
                         <span className="uppercase">RWUA NEPAL</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                          <line x1="16" y1="2" x2="16" y2="6" />
-                          <line x1="8" y1="2" x2="8" y2="6" />
-                          <line x1="3" y1="10" x2="21" y2="10" />
-                        </svg>
+                        <Calendar className="w-4 h-4" />
                         <span>January 15, 2020</span>
                       </div>
                     </div>
 
-                    <p className="text-base text-gray-600 leading-7 mb-5 font-poppins">
+                    <p className="text-base text-[#444444] leading-7 mb-5 font-sans">
                       Save The Children संस्थाको सहयोगमा न्यानो कम्बल वितरण कार्यक्रम सम्पन्न भएको छ। यस कार्यक्रममा जरुरतमन्द परिवारहरूलाई न्यानो कम्बल वितरण गरिएको थियो। यो कार्यक्रम जाडो मौसममा बिपन्न परिवारहरूलाई न्यानो राख्न सहयोग पुर्याउने उद्देश्यले गरिएको हो।
                     </p>
 
@@ -220,17 +187,13 @@ export default function NewsPressPage() {
                     <hr className="border-t border-gray-300 mb-4" />
 
                     {/* Footer with folder and tag icons */}
-                    <div className="flex items-center gap-2 text-sm text-gray-500 font-poppins">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 font-sans">
                       <div className="flex items-center gap-1">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z" />
-                        </svg>
-                        <Link href="#" className="no-underline" style={{ color: '#422673' }}>Save The Children</Link>
+                        <Folder className="w-4 h-4" />
+                        <Link href="#" className="no-underline text-[#422673]">Save The Children</Link>
                       </div>
                       <div className="flex items-center gap-1 ml-3">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M5.5 7A1.5 1.5 0 004 5.5 1.5 1.5 0 005.5 4 1.5 1.5 0 007 5.5 1.5 1.5 0 005.5 7zm15.91 4.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.41l8.99 9c.37.36.87.59 1.42.59s1.05-.23 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7A1.5 1.5 0 007 5.5 1.5 1.5 0 005.5 4 1.5 1.5 0 004 5.5 1.5 1.5 0 005.5 7z" />
-                        </svg>
+                        <Tag className="w-4 h-4" />
                       </div>
                     </div>
                   </div>
