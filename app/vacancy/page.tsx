@@ -54,54 +54,6 @@ Requirements:
     organization: 'RWUA NEPAL',
     contactEmail: 'info@rwua.org',
     location: 'Rural Districts, Nepal'
-  },
-  {
-    id: '3',
-    title: 'Field Coordinator - Women Empowerment',
-    description: `We are looking for a Field Coordinator to support our women empowerment programs in rural communities.
-
-Main duties:
-- Coordinate field activities and program implementation
-- Facilitate training sessions and capacity building programs
-- Support women's groups and cooperatives
-- Maintain program records and prepare reports
-- Liaise with community leaders and stakeholders
-
-Qualifications:
-- Bachelor's degree in any discipline
-- Experience in working with women's groups
-- Strong organizational and leadership skills
-- Ability to work independently in challenging environments
-- Knowledge of local languages and culture`,
-    image: '/images/vacancy3.jpg',
-    deadline: '2025-06-30',
-    organization: 'RWUA NEPAL',
-    contactEmail: 'careers@rwua.org',
-    location: 'Multiple Districts, Nepal'
-  },
-  {
-    id: '4',
-    title: 'Finance Assistant',
-    description: `RWUA Nepal requires a Finance Assistant to support financial operations and accounting activities.
-
-Responsibilities:
-- Assist in daily financial operations and bookkeeping
-- Prepare financial reports and statements
-- Support budget preparation and monitoring
-- Handle petty cash and expense management
-- Assist in audit processes and compliance
-
-Requirements:
-- Intermediate or Bachelor's degree in Commerce/Accounting
-- Basic knowledge of accounting principles
-- Computer literacy with MS Office applications
-- Attention to detail and accuracy
-- Fresh graduates are encouraged to apply`,
-    image: '/images/vacancy1.jpeg',
-    deadline: '2025-07-15',
-    organization: 'RWUA NEPAL',
-    contactEmail: 'finance@rwua.org',
-    location: 'Head Office, Nepal'
   }
 ];
 
@@ -120,7 +72,6 @@ export default function VacancyPage() {
   useEffect(() => {
     const loadVacancies = async () => {
       setIsLoading(true);
-      // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 800));
       setVacancies(vacancyData);
       setIsLoading(false);
@@ -178,38 +129,16 @@ export default function VacancyPage() {
                 {filteredVacancies.length === 0 && searchQuery.trim() && (
                   <div className="text-center py-12">
                     <div className="max-w-md mx-auto">
-                      <svg className="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6.294a23.946 23.946 0 01-4 2.33M6 20h12a2 2 0 002-2V8a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
                       <h3 className="text-lg font-medium text-gray-900 mb-2">No vacancies found</h3>
                       <p className="text-gray-500 mb-4">
                         No vacancies found matching "{searchQuery}". Try a different search term.
                       </p>
                       <button
                         onClick={() => handleSearch('')}
-                        className="text-purple-600 hover:text-purple-700 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded px-2 py-1 touch-target-comfortable"
-                        aria-label="Clear search and show all vacancies"
+                        className="text-purple-600 hover:text-purple-700 font-medium text-sm"
                       >
                         Show all vacancies
                       </button>
-                    </div>
-                  </div>
-                )}
-                
-                {/* No vacancies at all */}
-                {vacancies.length === 0 && !searchQuery.trim() && (
-                  <div className="text-center py-12">
-                    <div className="max-w-md mx-auto">
-                      <svg className="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6.294a23.946 23.946 0 01-4 2.33M6 20h12a2 2 0 002-2V8a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      <h3 className="text-lg font-medium text-gray-900 mb-2">No vacancies available</h3>
-                      <p className="text-gray-500 mb-4">
-                        No vacancies available at the moment. Please check back later for new opportunities.
-                      </p>
-                      <p className="text-sm text-gray-400">
-                        You can also contact us directly to inquire about future openings.
-                      </p>
                     </div>
                   </div>
                 )}
@@ -220,7 +149,6 @@ export default function VacancyPage() {
           {/* Right Sidebar - takes 1/3 of the width on desktop, hidden on mobile */}
           <div className="hidden lg:block lg:col-span-1">
             <div className="sticky top-8 space-y-6">
-              {/* Search Section */}
               <SearchSidebar 
                 onSearch={handleSearch}
                 placeholder="Search vacancies..."

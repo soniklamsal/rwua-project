@@ -22,7 +22,6 @@ export default function ContactPage() {
   // Simulate initial page loading
   useEffect(() => {
     const loadPage = async () => {
-      // Simulate loading delay
       await new Promise(resolve => setTimeout(resolve, 500));
       setIsLoading(false);
     };
@@ -36,14 +35,6 @@ export default function ContactPage() {
     
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Simulate potential network error (uncomment to test error handling)
-    // if (Math.random() > 0.7) {
-    //   throw new Error('Network error: Failed to send message');
-    // }
-    
-    // For demo purposes, we'll just log the data
-    // In production, this would integrate with email service or backend
   };
 
   return (
@@ -100,7 +91,7 @@ export default function ContactPage() {
                           <p className="text-gray-600 text-sm">
                             <a 
                               href={`tel:${contactInfo.phone}`} 
-                              className="hover:text-purple-600 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded"
+                              className="hover:text-purple-600 transition-colors"
                             >
                               {contactInfo.phone}
                             </a>
@@ -120,7 +111,7 @@ export default function ContactPage() {
                           <p className="text-gray-600 text-sm">
                             <a 
                               href={`mailto:${contactInfo.email}`} 
-                              className="hover:text-purple-600 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded break-all"
+                              className="hover:text-purple-600 transition-colors break-all"
                             >
                               {contactInfo.email}
                             </a>
@@ -152,7 +143,7 @@ export default function ContactPage() {
                               href={contactInfo.socialLinks.facebook}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                              className="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-colors"
                               aria-label="Follow us on Facebook"
                             >
                               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -165,7 +156,7 @@ export default function ContactPage() {
                               href={contactInfo.socialLinks.website}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-10 h-10 bg-gray-600 hover:bg-gray-700 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                              className="w-10 h-10 bg-gray-600 hover:bg-gray-700 text-white rounded-full flex items-center justify-center transition-colors"
                               aria-label="Visit our website"
                             >
                               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
